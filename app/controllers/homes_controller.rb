@@ -13,9 +13,10 @@ class HomesController < ApplicationController
       str = str.encode('utf-8', :invalid => :replace, :undef => :replace, :replace => '_')
       # page.search(".somecss")
 
-      output = File.open( "#{Rails.root}/app/views/homes/parse.html.erb","w" )
+      output = File.open( "#{Rails.root}/public/parse.html","w" )
       output << str
       output.close
+      render file: "public/parse.html"
     end
   end
 
